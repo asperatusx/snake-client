@@ -16,10 +16,9 @@ const connect = function() {
   conn.on('connect', () => {
     console.log("successfully connected to server")
     conn.write('Name: AL');
+    // conn.write('Move: up');
   })
-
-
-
+  
   conn.on('data', (data) => {
     console.log(data)
   })
@@ -28,3 +27,10 @@ const connect = function() {
 }
 
 module.exports = connect;
+
+/* Movement commands
+"Move: up" - move up one square (unless facing down)
+"Move: down" - move down one square (unless facing up)
+"Move: left" - move left one square (unless facing right)
+"Move: right" - move left one square (unless facing left)
+*/
