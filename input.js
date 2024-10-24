@@ -32,10 +32,10 @@ const handleUserInput = function(key) {
 }
 
 const movementCommands = {
-  '\u0077': 'Move: up',
-  '\u0073': 'Move: down',
-  '\u0061': 'Move: left',
-  '\u0064': 'Move: right'
+  'w': 'Move: up',
+  's': 'Move: down',
+  'a': 'Move: left',
+  'd': 'Move: right'
 }
 
 
