@@ -16,7 +16,6 @@ const connect = function() {
   conn.on('connect', () => {
     console.log("successfully connected to server")
     conn.write('Name: AL');
-    // conn.write('Move: up');
   })
   
   conn.on('data', (data) => {
