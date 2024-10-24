@@ -13,21 +13,30 @@ const setupInput = function (conn) {
 
 // setup interface to handle user input from stdin
 const handleUserInput = function(key) {
-  if (key === '\u0077') {
-    connection.write('Move: up')
+  const command = movementCommands[key];
+  if (command) {
+    connection.write(command)
   }
-  if (key === '\u0073') {
-    connection.write('Move: down')
+  if (command) {
+    connection.write(command)
   }
-  if (key === '\u0061') {
-    connection.write('Move: left')
+  if (command) {
+    connection.write(command)
   }
-  if (key === '\u0064') {
-    connection.write('Move: right')
+  if (command) {
+    connection.write(command)
   }
   if (key === '\u0003') {
     process.exit();
   }
 }
+
+const movementCommands = {
+  '\u0077': 'Move: up',
+  '\u0073': 'Move: down',
+  '\u0061': 'Move: left',
+  '\u0064': 'Move: right'
+}
+
 
 module.exports = setupInput;
